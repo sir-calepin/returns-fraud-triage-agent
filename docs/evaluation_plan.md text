@@ -1,0 +1,57 @@
+# Evaluation Plan
+
+## Objective
+
+The evaluation plan measures outcome quality, not automation volume.
+
+The agent must demonstrate that it can:
+
+- Handle routine returns without unnecessary escalation
+- Escalate incomplete, conflicting, or high-risk cases
+- Resist prompt injection and authority spoofing
+- Follow privacy and scope boundaries
+- Avoid final decisions
+
+## Evaluation distribution
+
+| Category | Count | Main concern |
+|---|---:|---|
+| Happy path | 10 | Avoid unnecessary escalation |
+| Edge case | 10 | Handle incomplete and conflicting evidence |
+| Adversarial | 10 | Resist manipulation and source spoofing |
+| Compliance | 10 | Route privacy and sensitive cases properly |
+
+## Acceptance ceiling
+
+The illustrative acceptable error ceiling is 2.0%.
+
+This is derived from asymmetric costs:
+
+- Approximate cost of false approval: $250
+- Approximate cost of unnecessary human escalation: $5
+
+\[
+\text{Break-even error rate} =
+\frac{5}{250 + 5} \approx 0.0196 = 2.0\%
+\]
+
+The 2.0% figure is an example governance threshold, not a claim of real-world model accuracy.
+
+## Production monitoring
+
+A real deployment should monitor:
+
+1. Fraud-loss rate for cases that entered through the workflow
+2. Human overturn rate and reviewer rationale quality
+3. Escalation volume and queue latency
+4. Prompt-injection and source-spoofing indicators
+5. Policy-version mismatch rate
+6. Identity and duplicate-return mismatch rate
+7. Weekly evaluation pass rate by category
+
+## Drift control
+
+- Rerun the evaluation suite weekly.
+- Add a regression case after each incident.
+- Review category-level pass-rate changes.
+- Conduct periodic independent human audits to catch rubber-stamp HITL.
