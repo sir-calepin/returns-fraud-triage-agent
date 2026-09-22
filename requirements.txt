@@ -1,0 +1,2 @@
+# This portfolio prototype uses only Python's standard library.
+# Kept intentionally dependency-free for simple local execution.
