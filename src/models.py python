@@ -1,0 +1,35 @@
+from dataclasses import dataclass, field
+from typing import List, Optional
+
+
+@dataclass
+class ReturnRequest:
+    request_id: str
+    customer_id: Optional[str]
+    order_id: Optional[str]
+    item_value: float
+    delivery_days_ago: Optional[int]
+    stated_reason: str
+    serial_matches: Optional[bool]
+    duplicate_return: bool = False
+    prior_returns_30_days: int = 0
+    conflicting_records: bool = False
+    customer_text: str = ""
+
+
+@dataclass
+class TriageResult:
+    classification: str
+    confidence: float
+    reasons: List[str] = field(default_factory=list)
+    prompt_injection_detected: bool = False
+
+
+@dataclass
+class ReviewCase:
+    request_id: str
+    risk_level: str
+    policy_version: str
+    reasons: List[str]
+    route: Optional[str] = None
+    escalation_required: bool = False
