@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials.json
+service-account*.json
+
+# Local logs and generated outputs
+logs/
+output/
+reports/
+*.log
+
+# Data: no real customer, order, payment, or identity data
+data/
+*.csv
+*.json
+*.xlsx
+*.parquet
+
+# Documents not intended for repository publication
+*.docx
+*.pdf
+*.pptx
+
+# OS
+.DS_Store
+Thumbs.db
