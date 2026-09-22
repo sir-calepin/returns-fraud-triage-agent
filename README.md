@@ -171,6 +171,3 @@ A real deployment should pause or roll back if:
 
 This project is available under the MIT License. It is provided “as is,” without warranty. Do not use it as a substitute for legal advice, security review, privacy review, or production model-risk validation.
 
-## Author note
-
-This repository is a curated portfolio edition of a graduate-level agentic workflow and AI governance project. Course-provided case materials, instructor samples, raw course submissions, and proprietary materials are intentionally excluded.
