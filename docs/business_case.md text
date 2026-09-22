@@ -1,0 +1,30 @@
+# Business Case
+
+## Workflow
+
+The workflow supports triage of approximately 800 monthly customer return requests. It is repetitive enough for bounded automation: the same high-level actions occur on most requests—extract identifiers, check order status, retrieve policy, review basic customer-return history, and route the case.
+
+## Why an agent instead of a rule-only workflow
+
+Rules are useful for clear thresholds, such as an expired policy window or missing order ID. The agent layer adds value when it must interpret messy return descriptions, extract details from unstructured text, distinguish likely fulfillment issues from potential abuse, and create a concise evidence summary for a human reviewer.
+
+## Why the agent does not make final decisions
+
+A false approval can cause financial loss, while a false flag can delay a legitimate refund and harm customer trust. The workflow therefore treats the system as decision support. A human retains authority over final return and refund decisions.
+
+## Illustrative economics
+
+The portfolio case assumes about 800 return requests per month, an estimated 3% fraud rate, and approximately $400,000 in annual fraud-loss exposure. These are educational assumptions, not audited business metrics.
+
+In a real business case, leadership should estimate:
+
+- Baseline staff minutes per request
+- Fully loaded labor cost
+- Baseline fraud-loss rate
+- Refund-delay impact on customer outcomes
+- Platform, compute, integration, monitoring, and governance cost
+- Cost of false approvals and false escalations
+
+## Success definition
+
+Success is not “percentage of cases automated.” Success means lower fraud loss, stable or improved customer-resolution time, bounded error rates, and evidence that humans still review consequential exceptions independently.
