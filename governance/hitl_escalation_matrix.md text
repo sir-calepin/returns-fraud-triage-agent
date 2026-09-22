@@ -1,0 +1,25 @@
+# Human-in-the-Loop Escalation Matrix
+
+| Trigger | Source Agent | Human Role | SLA | Required Human Action |
+|---|---|---|---|---|
+| Confidence below 75% or missing order ID | Intake Triage | Returns clerk | 4 business hours | Validate identifiers and complete missing information |
+| Expired return window | Fraud and Policy Analyst | Returns supervisor | Same business day | Review policy exception eligibility and rationale |
+| Serial/SKU mismatch | Fraud and Policy Analyst | Returns supervisor | Same business day | Verify identity, order, and physical-item evidence |
+| Duplicate return request | Fraud and Policy Analyst | Returns supervisor | Same business day | Determine duplicate, fraud, or valid separate issue |
+| Prompt-injection signal | Fraud and Policy Analyst | Returns supervisor | Same business day | Review evidence; preserve event for security analysis |
+| High-value item | Fraud and Policy Analyst | Operations manager | 4 business hours | Conduct enhanced review before any customer-impacting decision |
+| Repeat-return threshold | Fraud and Policy Analyst | Operations manager | 4 business hours | Assess pattern with context; avoid automatic penalty |
+| Conflicting records | Fraud and Policy Analyst | Operations manager | 4 business hours | Reconcile order, refund, shipment, and return history |
+| Invalid queue match / duplicate assignment | Routing Coordinator | Returns supervisor | 4 business hours | Correct routing and confirm case ownership |
+
+## Meaningful HITL requirement
+
+A human reviewer must:
+
+1. Open the underlying order and return records.
+2. Check the policy version cited by the agent.
+3. Confirm or reject the agent’s risk rationale.
+4. Record an independent reason for any final decision.
+5. Avoid relying on the agent’s classification as the sole basis for action.
+
+Human approval rate and override patterns should be audited to detect rubber-stamp behavior.
